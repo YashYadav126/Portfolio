@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash - portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8e9832e2bd.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: -1px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: rgb(1, 1, 47);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(4, 4, 90);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: red;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        nav ul li a:hover {
+            color: blue;
+            background: linear-gradient(skyblue, lightgreen);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .left {
+            font-size: 2rem;
+            margin-left: 0px;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 100px 0;
+        }
+
+        .firstsection>div {
+            width: 35%;
+        }
+
+        .leftsection {
+            font-size: 2rem;
+            margin-top: 25px;
+        }
+
+        .rightsection img {
+            width: 100%;
+            height: 100%;
+            margin: 4px;
+        }
+
+        .purple {
+            color: blueviolet;
+        }
+
+        #element {
+            color: blueviolet;
+            font-size: larger;
+        }
+
+        .secondsection {
+            max-width: 80vw;
+            margin: auto;
+        }
+
+        hr {
+            display: flex;
+            margin-left: -8%;
+            margin-right: -8%;
+            margin-bottom: 10%;
+        }
+
+        h1 {
+            padding: 1%;
+        }
+
+        .aboutcol1 {
+            padding-left: 10%;
+        }
+
+        .aboutcol1 img {
+            border-radius: 15px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sub {
+            padding-left: -30px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .tab-title {
+            display: flex;
+            margin: 20px 0 40px;
+        }
+
+        .tab-links {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: red;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .aboutcol2 {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .tab-links.active::after {
+            width: 50%;
+        }
+
+        .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        span {
+            color: red;
+            font-size: 20px;
+        }
+
+        .tab-contents {
+            display: none;
+        }
+
+        .tab-contents.active-tab {
+            display: block;
+        }
+
+        #portfolio {
+            padding: 50px 80px;
+        }
+
+        .work-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .works img {
+            border-radius: 10px;
+            max-width: 100%;
+            /* height: auto; */
+            margin-bottom: 20px;
+        }
+
+        .works {
+            flex-basis: 45%;
+            margin: 10px;
+        }
+
+        .container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .contact-left {
+            flex-basis: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-left p {
+            margin-top: 30px;
+        }
+
+        .contact-left p i {
+            color: red;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .social-icons a {
+            margin-top: 15px;
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: white;
+            display: inline-block;
+            transform: 0.5s;
+        }
+
+        .social-icons a:hover {
+            color: red;
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            padding: 10px;
+            text-decoration: none;
+            background-color: rgb(9, 9, 95);
+            color: white;
+            border-radius: 6px;
+        }
+
+        .btn1 {
+            margin-top: 30px;
+            transform: 0.5s;
+        }
+
+        .btn:hover {
+            background-color: red;
+        }
+
+       
+
+
+    @media only screen and (max-width: 768px) {
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstsection {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .firstsection>div {
+            width: 80%;
+            margin-bottom: 30px;
+        }
+
+        .rightsection img {
+            margin: 0;
+        }
+
+        .sub {
+            padding-left: 0;
+        }
+
+        .aboutcol1 {
+            padding-left: 0;
+        }
+
+        .aboutcol2 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .tab-links {
+            font-size: 16px;
+            margin-right: 30px;
+        }
+
+        .works {
+            flex-basis: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <header id="header">
+        <nav>
+            <div class="left">Yash's Portfolio</div>
+            <div class="right">
+                <ul>
+
+                    <li><a href="#header">Home</a></li>
+
+
+                    <li><a href="#about">About</a></li>
+
+
+
+
+                    <li><a href="#portfolio">Projects</a></li>
+
+
+                    <li><a href="#contact">Contact Me</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">Hi, My name is <samp class="purple">Yash</samp>
+                <div> and i am a Mca student and <span id="element"></span>
+                </div>
+            </div>
+            <div class="rightsection"><img src="pot.png.png" alt=""></div>
+        </section>
+        <section class="secondsection">
+            <hr>
+        </section>
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="aboutcol1">
+                        <img src="IMG_4063.jpg" width="500" height="300">
+                    </div>
+                    <div class="aboutcol2">
+                        <h1 class="sub">About me</h1>
+                        <p>Passionate and dedicated individual with a strong enthusiasm for technology and creativity. Aspiring to bridge the gap between innovation and practicality, I thrive on transforming ideas into tangible solutions. With a background in [mention relevant background], I bring a unique blend of [mention skills or qualities] to every endeavor. My journey is fueled by a curiosity to continuously learn and adapt, driving me to explore new horizons and embrace challenges with an open mindset. I am excited to contribute my skills and perspective to meaningful projects and collaborations.</p>
+                        <div class="tab-title">
+                            <p class="tab-links active" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Eduaction</p>
+                            <p class="tab-links" onclick="opentab('exprience')">Achivement</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li>
+                                    <i class="fa-brands fa-python fa-2xl"></i>
+                                    <span>Python</span><br> pandas and numpy
+                                </li>
+                                <li><i class="fa-solid fa-code fa-lg"></i><span>Web development</span><br>HTML,CSS and
+                                    JS</li>
+                                <li><i class="fa-solid fa-database fa-lg"></i><span> DataBase</span><br>Mysql</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li>
+                                    <span>2017</span><br>10th from Army public school Mathura
+                                </li>
+                                <li><span>2019</span><br>12th from Army public school Mathura</li>
+
+                                <li><span>2019-22</span><br>Bsc(PCM)Agra unvi.</li>
+
+                                <li><span>2022-24</span><br>MCA from GLAU</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="exprience">
+                            <ul>
+                                <li><i class="fa-solid fa-cricket-bat-ball"></i>
+                                    <span>Cricket compitation</span><br>We had won the cricket compitation in GLA University
+                                </li>
+                                <li>
+                                    <span>Football compitation</span><br>i engage in football tournaments in my bachelor
+                                </li>
+                                <ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title">Projects</h1>
+                <div class="work-list">
+                    <div class="works">
+                        <img src="object.jpg" width="400" height="300">
+                        <div class="layer">
+                            <h3>Object detection</h3>
+                            <p>Created an object detection system using OpenCV, a popular computer vision library, to identify and locate objects within images. Utilized pre-trained models such as YOLO (You Only Look Once) for efficient and accurate detection. Processed images by applying image filtering, edge detection, and feature extraction techniques. Fine-tuned model parameters and thresholds to enhance detection accuracy. The project involved dataset collection, preprocessing, and algorithm implementation, showcasing proficiency in computer vision, image processing, and OpenCV (cv2) usage.</p><br>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="works">
+                        <img src="cal.jpg" width="400" height="300">
+                        <div class="layer">
+                            <h3>Calculator</h3>
+                            <p>Designed and built a calculator application using Python's tkinter library, allowing users to perform arithmetic calculations through an intuitive graphical interface. Implemented buttons and input fields for common operations like addition, subtraction, multiplication, and division, offering a user-friendly experience. Incorporated event handling to ensure accurate input capture and calculation execution. The project showcases proficiency in GUI development, event-driven programming, and basic algorithm implementation, highlighting skills in Python and tkinter.</p><br>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="works">
+                        <img src="game1.jpg" width="400" height="300">
+                        <div class="layer">
+                            <h3>Space-ship Game</h3>
+                            <p>Developed a space ship game using the Pygame library, enabling players to navigate a spaceship through an interactive space environment. Implemented player controls for movement and shooting, along with enemy spaceships and obstacles for an engaging gameplay experience. Incorporated collision detection, scoring mechanisms, and sound effects to enhance game dynamics. This project demonstrates expertise in game development, graphics rendering, user interactions, and Python programming with Pygame.</p><br>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact me</h1>
+                        <p><i class="fa-solid fa-paper-plane fa-xs"></i>yashthegreat12@gmail.com</p>
+                        <p><i class="fa-solid fa-phone fa-xs"></i>9068520627</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/yash-yadav-12a07a248/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                        </div>
+                        <div class="btn1">
+                            <a href="2017_Deep_Table_ICDAR.pdf" download="" class="btn">Download CV</a>
+                        </div>
+
+                    </div>
+                    <div class="contact-right">
+                        <form></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['a Web developer', 'a Python developer'],
+            typeSpeed: 50,
+        });
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+
+</html>
